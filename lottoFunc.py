@@ -12,7 +12,7 @@ def echo(update, cb):
     file_id = update.message.photo[-1].file_id
     
     newFile = bot.getFile(file_id)
-    newFile.download('lotto'+str(chat_id)+'.jpg')
+    newFile.download('img/lotto'+str(chat_id)+'.jpg')
     bot.sendMessage(chat_id=chat_id, text="download succesfull!")
     getNumber(chat_id)
 
