@@ -18,6 +18,6 @@ def echo(update, cb):
 
 # 이미지 처리
 def getNumber(chat_id):
-    img = Image.open('lotto'+str(chat_id)+'.jpg')
+    img = Image.open('img/lotto'+str(chat_id)+'.jpg')
     text = pytesseract.image_to_string(img, config = '--psm 6')
     print(text)
