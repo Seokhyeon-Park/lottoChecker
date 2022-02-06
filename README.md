@@ -1,6 +1,6 @@
 # lottoChecker (Telegram bot)
 
-**<span style="color:red"> * (2022.02.06 기준) 미완성입니다.</span>**
+<span style="color:red"> * (2022.02.06 기준) 미완성입니다.</span>
 
 ## 로또 사진을 전송하면 당첨 여부를 알려줍니다.
 
