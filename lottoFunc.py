@@ -30,12 +30,12 @@ def imgProcessing(chat_id):
                 imgArr[dOne][dTwo] = 0
     
     # 변경된 이미지 저장
-    cv2.imwrite('img/lotto'+str(chat_id)+'.jpg', imgArr)
+    cv2.imwrite('img/lotto'+str(chat_id)+'e.jpg', imgArr)
 
     # 숫자 영역 및 MNIST
     # https://kagus2.tistory.com/28
 
     # 변경된 이미지 불러오기
-    img = Image.open('img/lotto'+str(chat_id)+'.jpg')
+    img = Image.open('img/lotto'+str(chat_id)+'e.jpg')
     text = pytesseract.image_to_string(img, config = '--psm 6')
     bot.sendMessage(chat_id=chat_id, text=text)
