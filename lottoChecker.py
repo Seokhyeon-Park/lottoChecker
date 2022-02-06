@@ -2,6 +2,8 @@ import lottoFunc as func
 import key
 from telegram.ext import Updater, MessageHandler, Filters
 
+# https://t.me/lottochecker_bot
+
 def main():
     # updater : , dispatcher : 
     updater = Updater(token=key.token, use_context=True)
@@ -11,7 +13,7 @@ def main():
     echo_handler = MessageHandler(Filters.photo, func.echo)
     dispatcher.add_handler(echo_handler)
 
-    # polling
+    # polling (handler/dispatcher loop)
     updater.start_polling()
     updater.idle()
 
