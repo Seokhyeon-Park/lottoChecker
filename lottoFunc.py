@@ -1,3 +1,4 @@
+from cv2 import medianBlur
 import telegram as tel
 import key
 import cv2
@@ -46,5 +47,5 @@ def imgProcessing(chat_id):
 
     # 변경된 이미지 불러오기
     img = Image.open('img/lotto'+str(chat_id)+'e.jpg')
-    text = pytesseract.image_to_string(img, config = '--psm 6 digits') # digits
+    text = pytesseract.image_to_string(img, config = '--psm 6 digits')
     bot.sendMessage(chat_id=chat_id, text=text)
