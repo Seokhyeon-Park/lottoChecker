@@ -21,14 +21,23 @@ def echo(update, cb):
 # 이미지 처리
 def imgProcessing(chat_id):
     # 다운로드된 이미지 불러오기
-    # 이미지 색상을 뚜렷하게 변경
     imgArr = cv2.imread('img/lotto'+str(chat_id)+'.jpg', 0)
 
+    # 이미지 블러
+    imgArr = cv2.GaussianBlur(imgArr, (5, 5), 0)
+
+    # 이미지 색상을 뚜렷하게 변경
     for dOne in range(0, len(imgArr)):
         for dTwo in range(0, len(imgArr[dOne])):
             if imgArr[dOne][dTwo] < 210:
-                imgArr[dOne][dTwo] = 0
-    
+                imgArr[dOne][dTwo] = 0    
+
+    # 이미지 비율 설정
+    # imgSize = imgArr.shape
+    # print(imgSize)
+    sizeRate = 2
+    imgArr = cv2.resize(imgArr, (0, 0), fx=sizeRate, fy=sizeRate)
+
     # 변경된 이미지 저장
     cv2.imwrite('img/lotto'+str(chat_id)+'e.jpg', imgArr)
 
@@ -37,5 +46,5 @@ def imgProcessing(chat_id):
 
     # 변경된 이미지 불러오기
     img = Image.open('img/lotto'+str(chat_id)+'e.jpg')
-    text = pytesseract.image_to_string(img, config = '--psm 6')
+    text = pytesseract.image_to_string(img, config = '--psm 6 digits') # digits
     bot.sendMessage(chat_id=chat_id, text=text)
