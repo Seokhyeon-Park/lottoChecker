@@ -2,7 +2,7 @@
 
 ## 로또 사진을 전송하면 당첨 여부를 알려줍니다.
 
-**프로젝트 폐지. log를 참고 해주세요.**
+**프로젝트 폐지, log를 참고 해주세요.**
 
 #### 사용법
 1. Telegram bot 주소 : https://t.me/lottochecker_bot
